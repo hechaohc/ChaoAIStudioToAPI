@@ -20,7 +20,7 @@
 ### 部署步骤
 1. 克隆本仓库
 ```bash
-git clone https://github.com/chaochao/ChaoAIStudioToAPI.git
+git clone https://github.com/hechaohc/ChaoAIStudioToAPI.git
 cd ChaoAIStudioToAPI
  
  

@@ -1,0 +1,32 @@
+name: aistudio-to-api
+
+services:
+  caddy:
+    image: caddy:2-alpine
+    container_name: aistudio-caddy
+    restart: unless-stopped
+    depends_on:
+      - app
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+
+  app:
+    build:
+      context: .
+    image: aistudio-to-api:local-4g
+    container_name: aistudio-to-api
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: production
+      TZ: Asia/Shanghai
+    ports:
+      - "7860:7860"
+    volumes:
+      - ./auth:/app/configs/auth
+      - ./data:/app/data
+    shm_size: "512mb"

@@ -1,0 +1,12 @@
+http://gemini.superhomechao.top {
+    encode gzip zstd
+
+    reverse_proxy app:7860
+}
+
+https://gemini.superhomechao.top {
+    tls internal
+    encode gzip zstd
+
+    reverse_proxy app:7860
+}

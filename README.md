@@ -1,5 +1,4 @@
 # ChaoAIStudioToAPI
-中文文档| [English]
 基于 ChaoAIStudioToAPI 二次开发，专为低配置服务器优化的 API 转换工具。
 
 ---
